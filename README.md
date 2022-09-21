@@ -37,6 +37,7 @@ func handler(data T) {
 使用`go-dispatcher`之后：
 
 ```go
+// go get github.com/xmh19936688/go-dispatcher
 import "github.com/xmh19936688/go-dispatcher/dispatcher"
 
 type T struct{}
