@@ -84,3 +84,13 @@ func (d *dispatcher[T]) Start() {
 		}()
 	}
 }
+
+// 串行执行，仅供测试
+func (d *dispatcher[T]) Run() {
+	for {
+		d.handler(<-d.ch)
+		if d.wg != nil {
+			d.wg.Done()
+		}
+	}
+}
